@@ -1,0 +1,199 @@
+
+body {
+    background-color: rgb(32, 30, 30);
+}
+ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+ul.nav li {
+    float: left;
+}
+ul.nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 24px 28px;
+    text-decoration: none;
+    font-size: 72px;
+    font-family: "Cinzel Decorative"
+}
+ul.nav li a.active{
+    color: rgb(197, 149, 46);
+}
+ul.nav li a:hover:not(.active) {
+    color: rgb(197, 149, 46);
+}
+ul.nav li.right-float {
+    float: right;
+}
+ul.nav li.dropdown {
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 72px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.8);
+    z-index: 1;
+}
+ul.nav li.dropdown .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 36px;
+}
+ul.nav li.dropdown .dropdown-content a:hover:not(.activeRace) {
+    color: rgb(197, 149, 46);
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.main-page {
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+.main-image {
+    cursor: pointer;
+    position: relative;
+    display: block;
+}
+.main-image img {
+    width: 100%;
+}
+.title {
+    position: absolute;
+    top: 0; right: 0;
+    bottom: 0; left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0,0,0,0.8);
+    opacity: 0;
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    transition: opactiy 0.3s;
+    vertical-align: middle;
+    line-height: 200px;
+}
+.title:hover {
+    opacity: 1;
+}
+.title h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    display: inline-table;
+    vertical-align: middle;
+    line-height: 100%;
+    font-family: "Cinzel Decorative";
+    font-size: 125px;
+}
+
+/*Race Pages*/
+
+.main-head {
+    grid-area: header;
+}
+.side-nav {
+    grid-area: sidebar;
+}
+.image {
+    grid-area: image;
+}
+.history {
+    grid-area: history;
+}
+.gitHub-footer {
+    grid-area: footer;
+}
+.wrapper {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+    "sidebar"
+    "header"
+    "image"
+    "history"
+    "footer";
+}
+.wrapper aside.side-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 30px;
+    line-height: 1.8;
+    overflow: hidden;
+    background-color:black;
+}
+.wrapper aside.side-nav h1 {
+    color: white;
+    font-size: 36px;
+}
+.wrapper aside.side-nav a {
+    text-decoration: none;
+    font-size: 36px;
+    color: white;
+    font-family: "Cinzel Decorative"
+}
+.wrapper aside.side-nav a:hover {
+    color: rgb(197, 149, 46);
+}
+.wrapper header.main-head {
+    margin-top: 96px;
+    font-size: 72px;
+    color: gold;
+    text-align: center;
+}
+.wrapper article.history p {
+    font-size: 28px;
+    line-height: 1.8;
+    margin-top: 24px;
+    margin-right: 120px;
+    margin-left: 120px;
+    margin-bottom: 24px;
+    color: white;
+    font-family: "Iconsolata";
+}
+.wrapper footer.gitHub-footer {
+    text-align: center;
+}
+.wrapper footer.gitHub-footer a {
+    color: white;
+    font-size: 18px;
+}
+@media(min-width: 500px){
+    .wrapper {
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas:
+        "sidebar header"
+        "sidebar    image"
+        "sidebar    history"
+        "footer footer";
+    }
+    .wrapper.aside ul.race-nav {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+@media(min-width: 700px){
+    .wrapper {
+        grid-template-columns: 1fr 4fr 2fr;
+        grid-template-areas:
+        "sidebar  header  ."
+        "sidebar history image"
+        "sidebar history image"
+        "footer  footer  footer";
+    }
+}
+
+
+
