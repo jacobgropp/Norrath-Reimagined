@@ -116,33 +116,25 @@ ul.nav li.dropdown .dropdown-content a:hover:not(.activeRace) {
 .gitHub-footer {
     grid-area: footer;
 }
-.wrapper {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-areas:
-    "sidebar"
-    "header"
-    "image"
-    "history"
-    "footer";
-}
 .wrapper aside.side-nav {
     list-style-type: none;
-    margin: 0;
-    padding: 30px;
+    padding: 0px;
     line-height: 1.8;
     overflow: hidden;
     background-color:black;
+    text-align: center;
 }
-.wrapper aside.side-nav h1 {
-    color: white;
+.wrapper aside.side-nav p {
+    color: gold;
     font-size: 36px;
 }
 .wrapper aside.side-nav a {
     text-decoration: none;
     font-size: 36px;
-    color: white;
-    font-family: "Cinzel Decorative"
+    color: white; 
+    font-family: "Cinzel Decorative";
+    text-align: center;
+    padding: 0px;
 }
 .wrapper aside.side-nav a:hover {
     color: rgb(197, 149, 46);
@@ -163,6 +155,12 @@ ul.nav li.dropdown .dropdown-content a:hover:not(.activeRace) {
     color: white;
     font-family: "Iconsolata";
 }
+.wrapper .image img {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    width: 500px;
+}
 .wrapper footer.gitHub-footer {
     text-align: center;
 }
@@ -170,21 +168,27 @@ ul.nav li.dropdown .dropdown-content a:hover:not(.activeRace) {
     color: white;
     font-size: 18px;
 }
-@media(min-width: 500px){
+.wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas:
+    "sidebar"
+    "header"
+    "image"
+    "history"
+    "footer";
+}
+@media(min-width: 1200px){
     .wrapper {
         grid-template-columns: 1fr 3fr;
         grid-template-areas:
         "sidebar header"
-        "sidebar    image"
-        "sidebar    history"
+        "sidebar image"
+        "sidebar history"
         "footer footer";
     }
-    .wrapper.aside ul.race-nav {
-        display: flex;
-        justify-content: space-between;
-    }
 }
-@media(min-width: 700px){
+@media(min-width: 2000px){
     .wrapper {
         grid-template-columns: 1fr 4fr 2fr;
         grid-template-areas:
